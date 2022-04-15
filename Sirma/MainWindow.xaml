@@ -1,0 +1,19 @@
+﻿<Window x:Class="Sirma.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="File browser" Height="400" Width="400"
+        ResizeMode="NoResize">
+    <DockPanel Margin="10">
+        <WrapPanel HorizontalAlignment="Center" DockPanel.Dock="Top" Margin="0,0,0,10">
+            <Button Name="btnOpenFile" Click="BtnOpenFile_Click">Open file</Button>
+        </WrapPanel>
+        <DataGrid Name="commonDuties" RowHeight="30" ColumnWidth="*" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Emplotee ID #1" Binding="{Binding EmployeeID_First}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Emplotee ID #2" Binding="{Binding EmployeeID_Second}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Project ID" Binding="{Binding ProjectID}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Days worked" Binding="{Binding DaysInterval}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </DockPanel>
+</Window>
