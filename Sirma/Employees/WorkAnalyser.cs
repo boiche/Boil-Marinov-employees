@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 
 namespace Sirma.Employees
@@ -7,16 +8,19 @@ namespace Sirma.Employees
     public class WorkAnalyser
     {
         private readonly List<Portfolio> _portfolios;
+        private const string emptyDate = "NULL";
         public WorkAnalyser(IEnumerable<string> data)
         {
             List<WorkTicket> tickets = new();
             foreach (var inputRow in data)
             {
                 string[] rowData = inputRow.Split(',');
-                DateTime.TryParse(rowData[2], out DateTime fromDate);
-                DateTime.TryParse(rowData[3], out DateTime toDate);
-                if (toDate == DateTime.MinValue)
+                DateTime.TryParse(rowData[2], CultureInfo.InvariantCulture, DateTimeStyles.AssumeLocal, out DateTime fromDate);
+                DateTime toDate;
+                if (rowData[3].Trim().ToUpper().Equals(emptyDate))
                     toDate = DateTime.Now;
+                else
+                    DateTime.TryParse(rowData[3], CultureInfo.InvariantCulture, DateTimeStyles.AssumeLocal, out toDate);
 
                 var ticketData = new WorkTicket()
                 {

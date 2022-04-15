@@ -17,3 +17,4 @@ C:\Users\boil_\source\repos\Sirma\Sirma\obj\Debug\net6.0-windows\Sirma.dll
 C:\Users\boil_\source\repos\Sirma\Sirma\obj\Debug\net6.0-windows\ref\Sirma.dll
 C:\Users\boil_\source\repos\Sirma\Sirma\obj\Debug\net6.0-windows\Sirma.pdb
 C:\Users\boil_\source\repos\Sirma\Sirma\obj\Debug\net6.0-windows\Sirma.genruntimeconfig.cache
+C:\Users\boil_\source\repos\Sirma\Sirma\obj\Debug\net6.0-windows\Sirma.csproj.AssemblyReference.cache
